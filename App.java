@@ -18,7 +18,7 @@ public class App {
 
     boolean programRunning = true;
     while( programRunning ){
-      System.out.println("Welcome to CDworld! Please enter one of the following: 'See all inventory', 'Search based on release year', 'Search based on price range', 'Search by artist', 'Search by album name'.");
+      System.out.println("Welcome to CDworld! Please enter one of the following: 'See all inventory', 'Search based on release year', 'Search based on price range', 'Search by artist', 'Search by album name', or type in a coupon code to see our inventory after your discount is applied!.");
       String userChoice = userConsole.readLine();
 
       if ( userChoice.equals("See all inventory") ) {
@@ -28,6 +28,30 @@ public class App {
           System.out.println( eachCD.mAlbumName );
           System.out.println( eachCD.mYear );
           System.out.println( "$" + eachCD.mPrice );
+        }
+      } else if ( userChoice.equals("NOOB") ) {
+        for ( CD eachCD : allCD ) {
+          System.out.println("-------------");
+          System.out.println( eachCD.mArtistName );
+          System.out.println( eachCD.mAlbumName );
+          System.out.println( eachCD.mYear );
+          System.out.println( "$" + (eachCD.mPrice * 0.9);
+        }
+      } else if ( userChoice.equals("VIP") ) {
+        for ( CD eachCD : allCD ) {
+          System.out.println("-------------");
+          System.out.println( eachCD.mArtistName );
+          System.out.println( eachCD.mAlbumName );
+          System.out.println( eachCD.mYear );
+          System.out.println( "$" + (eachCD.mPrice * 0.8);
+        }
+      } else if ( userChoice.equals("PROMO") ) {
+        for ( CD eachCD : allCD ) {
+          System.out.println("-------------");
+          System.out.println( eachCD.mArtistName );
+          System.out.println( eachCD.mAlbumName );
+          System.out.println( eachCD.mYear );
+          System.out.println( "$" + (eachCD.mPrice * 0.7);
         }
       } else if ( userChoice.equals("Search based on release year") ) {
         System.out.println("What year is the EARLIEST year that you are interested in?");

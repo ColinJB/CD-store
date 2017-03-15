@@ -11,13 +11,3 @@ class CD {
     mPrice = price;
   }
 }
-
-class Coupon {
-  public String mCode;
-  public Integer mDiscount;
-
-  public Coupon(String code, Integer discount) {
-    mCode = code;
-    mDiscount = discount;
-  }
-}
