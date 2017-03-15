@@ -72,6 +72,19 @@ public class App {
             System.out.println( eachCD.mPrice );
           }
         }
+      } else if ( userChoice.equals("Search by album name") ) {
+        System.out.println("What is the name of the album you are looking for?");
+        String userAlbum = userConsole.readLine();
+
+        for ( CD eachCD : allCD ) {
+          if ( eachCD.mAlbumName == userAlbum ) {
+            System.out.println("-------------");
+            System.out.println( eachCD.mArtistName );
+            System.out.println( eachCD.mAlbumName );
+            System.out.println( eachCD.mYear );
+            System.out.println( eachCD.mPrice );
+          }
+        }
       }
     }
   }
