@@ -9,5 +9,15 @@ class CD {
     mAlbumName = albumName;
     mYear = year;
     mPrice = price;
-  }  
+  }
+}
+
+class Coupon {
+  public String mCode;
+  public Integer mDiscount;
+
+  public Coupon(String code, Integer discount) {
+    mCode = code;
+    mDiscount = discount;
+  }
 }
