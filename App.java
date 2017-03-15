@@ -35,7 +35,7 @@ public class App {
           System.out.println( eachCD.mArtistName );
           System.out.println( eachCD.mAlbumName );
           System.out.println( eachCD.mYear );
-          System.out.println( "$" + (eachCD.mPrice * 0.9);
+          System.out.println( "$" + (eachCD.mPrice * 0.9) );
         }
       } else if ( userChoice.equals("VIP") ) {
         for ( CD eachCD : allCD ) {
@@ -43,7 +43,7 @@ public class App {
           System.out.println( eachCD.mArtistName );
           System.out.println( eachCD.mAlbumName );
           System.out.println( eachCD.mYear );
-          System.out.println( "$" + (eachCD.mPrice * 0.8);
+          System.out.println( "$" + (eachCD.mPrice * 0.8) );
         }
       } else if ( userChoice.equals("PROMO") ) {
         for ( CD eachCD : allCD ) {
@@ -51,7 +51,7 @@ public class App {
           System.out.println( eachCD.mArtistName );
           System.out.println( eachCD.mAlbumName );
           System.out.println( eachCD.mYear );
-          System.out.println( "$" + (eachCD.mPrice * 0.7);
+          System.out.println( "$" + (eachCD.mPrice * 0.7) );
         }
       } else if ( userChoice.equals("Search based on release year") ) {
         System.out.println("What year is the EARLIEST year that you are interested in?");
