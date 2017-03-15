@@ -43,15 +43,28 @@ public class App {
           }
         }
       } else if ( userChoice.equals("Search based on price range") ) {
-        System.out.println("What is the LEAST you are looking to spend?");
+        System.out.println("What is the LEAST you are looking to spend? (Just enter a number, no '$')");
         String stringFloorPrice = userConsole.readLine();
         Integer floorPrice = Integer.parseInt(stringFloorPrice);
-        System.out.println("What is the MOST you are looking to spend?");
+        System.out.println("What is the MOST you are looking to spend? (Just enter a number, no '$')");
         String stringCeilingPrice = userConsole.readLine();
         Integer ceilingPrice = Integer.parseInt(stringCeilingPrice);
 
         for ( CD eachCD : allCD ) {
           if ( eachCD.mPrice >= floorPrice || eachCD.mPrice <= ceilingPrice ) {
+            System.out.println("-------------");
+            System.out.println( eachCD.mArtistName );
+            System.out.println( eachCD.mAlbumName );
+            System.out.println( eachCD.mYear );
+            System.out.println( eachCD.mPrice );
+          }
+        }
+      } else if ( userChoice.equals("Search by artist") ) {
+        System.out.println("What artist are you looking for?");
+        String userArtist = userConsole.readLine();
+
+        for ( CD eachCD : allCD ) {
+          if ( eachCD.mArtistName == userArtist ) {
             System.out.println("-------------");
             System.out.println( eachCD.mArtistName );
             System.out.println( eachCD.mAlbumName );
