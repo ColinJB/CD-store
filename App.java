@@ -39,7 +39,24 @@ public class App {
             System.out.println( eachCD.mArtistName );
             System.out.println( eachCD.mAlbumName );
             System.out.println( eachCD.mYear );
-            System.out.println( eachCD.mPrice );            
+            System.out.println( eachCD.mPrice );
+          }
+        }
+      } else if ( userChoice.equals("Search based on price range") ) {
+        System.out.println("What is the LEAST you are looking to spend?");
+        String stringFloorPrice = userConsole.readLine();
+        Integer floorPrice = Integer.parseInt(stringFloorPrice);
+        System.out.println("What is the MOST you are looking to spend?");
+        String stringCeilingPrice = userConsole.readLine();
+        Integer ceilingPrice = Integer.parseInt(stringCeilingPrice);
+
+        for ( CD eachCD : allCD ) {
+          if ( eachCD.mPrice >= floorPrice || eachCD.mPrice <= ceilingPrice ) {
+            System.out.println("-------------");
+            System.out.println( eachCD.mArtistName );
+            System.out.println( eachCD.mAlbumName );
+            System.out.println( eachCD.mYear );
+            System.out.println( eachCD.mPrice );
           }
         }
       }
