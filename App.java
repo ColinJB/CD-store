@@ -12,6 +12,10 @@ public class App {
     CD jayZ = new CD("Jay-Z", "Blueprint", 2001, 12);
     CD pac = new CD("Tupac", "All Eyez on Me", 1996, 14);
 
+    allCD.add(luda);
+    allCD.add(jayZ);
+    allCD.add(pac);
+
     boolean programRunning = true;
     while( programRunning ){
       System.out.println("Welcome to CDworld! Please enter one of the following: 'See all inventory', 'Search based on release year', 'Search based on price range', 'Search by artist', 'Search by album name'.");
@@ -23,7 +27,7 @@ public class App {
           System.out.println( eachCD.mArtistName );
           System.out.println( eachCD.mAlbumName );
           System.out.println( eachCD.mYear );
-          System.out.println( eachCD.mPrice );
+          System.out.println( "$" + eachCD.mPrice );
         }
       } else if ( userChoice.equals("Search based on release year") ) {
         System.out.println("What year is the EARLIEST year that you are interested in?");
@@ -34,12 +38,12 @@ public class App {
         Integer ceilingYear = Integer.parseInt(stringCeilingYear);
 
         for ( CD eachCD : allCD ) {
-          if ( eachCD.mYear >= floorYear || eachCD.mYear <= ceilingYear ) {
+          if ( eachCD.mYear >= floorYear && eachCD.mYear <= ceilingYear ) {
             System.out.println("-------------");
             System.out.println( eachCD.mArtistName );
             System.out.println( eachCD.mAlbumName );
             System.out.println( eachCD.mYear );
-            System.out.println( eachCD.mPrice );
+            System.out.println( "$" + eachCD.mPrice );
           }
         }
       } else if ( userChoice.equals("Search based on price range") ) {
@@ -51,12 +55,12 @@ public class App {
         Integer ceilingPrice = Integer.parseInt(stringCeilingPrice);
 
         for ( CD eachCD : allCD ) {
-          if ( eachCD.mPrice >= floorPrice || eachCD.mPrice <= ceilingPrice ) {
+          if ( eachCD.mPrice >= floorPrice && eachCD.mPrice <= ceilingPrice ) {
             System.out.println("-------------");
             System.out.println( eachCD.mArtistName );
             System.out.println( eachCD.mAlbumName );
             System.out.println( eachCD.mYear );
-            System.out.println( eachCD.mPrice );
+            System.out.println( "$" + eachCD.mPrice );
           }
         }
       } else if ( userChoice.equals("Search by artist") ) {
@@ -64,12 +68,12 @@ public class App {
         String userArtist = userConsole.readLine();
 
         for ( CD eachCD : allCD ) {
-          if ( eachCD.mArtistName == userArtist ) {
+          if ( eachCD.mArtistName.equals(userArtist) ) {
             System.out.println("-------------");
             System.out.println( eachCD.mArtistName );
             System.out.println( eachCD.mAlbumName );
             System.out.println( eachCD.mYear );
-            System.out.println( eachCD.mPrice );
+            System.out.println( "$" + eachCD.mPrice );
           }
         }
       } else if ( userChoice.equals("Search by album name") ) {
@@ -77,14 +81,16 @@ public class App {
         String userAlbum = userConsole.readLine();
 
         for ( CD eachCD : allCD ) {
-          if ( eachCD.mAlbumName == userAlbum ) {
+          if ( eachCD.mAlbumName.equals(userAlbum) ) {
             System.out.println("-------------");
             System.out.println( eachCD.mArtistName );
             System.out.println( eachCD.mAlbumName );
             System.out.println( eachCD.mYear );
-            System.out.println( eachCD.mPrice );
+            System.out.println( "$" + eachCD.mPrice );
           }
         }
+      } else {
+        System.out.println("Please enter a valid input.");
       }
     }
   }
